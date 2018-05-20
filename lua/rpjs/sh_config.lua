@@ -1,4 +1,4 @@
-rpjs.versdion = "1.8"
+rpjs.version = "1.8"
 
 rpjs.config = {}
 
