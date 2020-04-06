@@ -35,7 +35,7 @@ concommand.Add("rpjs_debug", function(ply, cmd, args, argStr ) -- FOR DEBUG PURP
 	if not table.HasValue(rpjs.config.admins, ply:GetUserGroup()) then
     	print("+      Player is not in admin table       +")
 	end
-	if rpjs.loaded.tcmds then
+	if rpjs.loadedtcmds then
 		print("+     TeamCommands have been      +")
 		print("+      successfully removed       +")
 	else
