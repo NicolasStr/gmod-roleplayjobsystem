@@ -24,8 +24,6 @@ surface.CreateFont( "rpjs_desc", {
 	weight = 500
 } )
 
-local white = Color( 255, 255, 255, 255 )
-
 net.Receive( "rpjs_openmenu", function( len, ply )
 	if !IsValid(LocalPlayer()) && !LocalPlayer():IsPlayer() && !LocalPlayer():Alive() then return end
 
@@ -83,13 +81,13 @@ net.Receive( "rpjs_openmenu", function( len, ply )
 			JobInfos.Paint = function( self, w, h)
 				draw.RoundedBox( 0, 0, 0, w, h, bgcolor)
 				draw.RoundedBox( 0, 0, 0, 5, h, rpjs.config.barscolor )
-				draw.SimpleText( v.name, "rpjs_jobname", 20, 10, white, TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
+				draw.SimpleText( v.name, "rpjs_jobname", 20, 10, color_white, TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 				if v.max == 0 then
-					draw.SimpleText( team.NumPlayers( v.team ).."/∞", "rpjs_slots", 750, 10, white, TEXT_ALIGN_RIGHT, TEXT_ALIGN_TOP )
+					draw.SimpleText( team.NumPlayers( v.team ).."/∞", "rpjs_slots", 750, 10, color_white, TEXT_ALIGN_RIGHT, TEXT_ALIGN_TOP )
 				else
-					draw.SimpleText( team.NumPlayers( v.team ).."/"..v.max, "rpjs_slots", 750, 10, white, TEXT_ALIGN_RIGHT, TEXT_ALIGN_TOP )
+					draw.SimpleText( team.NumPlayers( v.team ).."/"..v.max, "rpjs_slots", 750, 10, color_white, TEXT_ALIGN_RIGHT, TEXT_ALIGN_TOP )
 				end
-				draw.SimpleText( DarkRP.getPhrase("salary", DarkRP.formatMoney( v.money ), ""), "rpjs_salary", 20, 80, white, TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
+				draw.SimpleText( DarkRP.getPhrase("salary", DarkRP.formatMoney( v.money ), ""), "rpjs_salary", 20, 80, color_white, TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 			end
 			JobInfos.DoClick = function()
 				if LocalPlayer():IsPlayer() && IsValid(LocalPlayer()) && LocalPlayer():Alive() then
@@ -192,7 +190,7 @@ net.Receive( "rpjs_opennpcspawner", function( len, ply )
 	Validate:SetSize( 548, 40 )
 	Validate.Paint = function()
 		draw.RoundedBox( 0, 0, 0, Validate:GetWide(), Validate:GetTall(), rpjs.config.resumecolor )
-		draw.SimpleText( DarkRP.getPhrase("add"), 'rpjs_titleFont', 270, 20, Color(255,255,255,255), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER )
+		draw.SimpleText( DarkRP.getPhrase("add"), 'rpjs_titleFont', 270, 20, color_white, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER )
 	end
 	Validate.DoClick = function()
 		local npctable = {}
